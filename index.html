@@ -101,7 +101,7 @@
             text-align: center; 
             position: relative;
             overflow: hidden;
-            min-height: 150px;
+            min-height: 100px;
         }
 
         .service-box:hover { transform: translateY(-10px); box-shadow: 0 10px 20px rgba(0,0,0,0.2); }
@@ -123,7 +123,11 @@
 
         .contact-info { margin-top: 10px; }
         .contact-info p { margin: 10px 0; font-size: 18px; display: flex; align-items: center; justify-content: center; }
-        .contact-info i { margin-right: 10px; color: #0073e6; font-size: 22px; }
+        .contact-info i { margin-right: 10px; color: #0073e6; font-size: 22px; 
+         text-decoration: none;
+    
+            
+        }
 
         form { margin-top: 20px; }
         input, textarea { width: 100%; padding: 10px; margin: 10px 0; border: 1px solid #ccc; border-radius: 5px; }
@@ -172,11 +176,44 @@
             nav { width: 100%; right: -100%; }
             .show-menu { right: 0; }
         }
+        .marquee-container {
+            width: 100%;
+          
+            padding: 10px;
+            overflow: hidden;
+            
+            box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+            display: flex;
+            align-items: center;
+            white-space: nowrap;
+        }
+
+        .marquee-box {
+            display: flex;
+            gap: 15px;
+        }
+
+        .marquee-item {
+            background-color: white;
+            color: #0073e6;
+            padding: 8px 12px;
+            border: 2px solid #0073e6;
+            border-radius: 5px;
+            box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+            font-size: 14px;
+            font-weight: bold;
+            text-align: center;
+            min-width: 160px;
+            max-width: 200px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
     </style>
 </head>
 <body>
     <header>
-        Shivam E-Mitra
+        <h3>Shivam E-Mitra</h3>
         <button class="menu-btn" onclick="toggleMenu()" aria-label="Open navigation menu">☰</button>
     </header>
 
@@ -191,6 +228,22 @@
         <h1>Welcome to Shivam E-Mitra</h1>
         <p>Your one-stop solution for all government and online services.</p>
     </section>
+  <div class="marquee-container">
+        <marquee direction="left" scrollamount="5">
+            <div class="marquee-box">
+                <div class="marquee-item">Aadhaar Card</div>
+                <div class="marquee-item">PAN Card</div>
+                <div class="marquee-item">Passport</div>
+                <div class="marquee-item">Caste Certificate</div>
+                <div class="marquee-item">Domicile Proof</div>
+                <div class="marquee-item">Marriage Certificate</div>
+                <div class="marquee-item">Registration & Documentation</div>
+                <div class="marquee-item">Birth/Death Certificate</div>
+                <div class="marquee-item">Driving License</div>
+                <div class="marquee-item">All Government Job Forms</div>
+            </div>
+        </marquee>
+    </div>
 
     <section id="about" class="section">
         <div class="card">
@@ -258,6 +311,13 @@
                     New applications and renewals
                 </div>
             </div>
+            <div class="service-box">
+<i class="fa-sharp-duotone fa-solid fa-award"></i>
+                <h3>All Government Job Form </h3>
+                <div class="service-description">
+                    New applications and corrections
+                </div>
+            </div>
         </div>
     </section>
 
@@ -265,16 +325,28 @@
         <div class="card">
             <h2>Contact Us</h2>
             <div class="contact-info">
-                <p><i class="fas fa-phone"></i> +91 9672106029</p>
-                <p><i class="fas fa-envelope"></i> shivamemitra7@gmail.com</p>
-                <p><i class="fas fa-map-marker-alt"></i> Rajasthan, India</p>
+              <p>
+  <i class="fas fa-phone"></i> 
+  <a href="tel:+919672106029" style="text-decoration: none; color: inherit;">
+    +91 9672106029
+  </a>
+</p>
+<p>
+  <i class="fas fa-envelope"></i> 
+  <a href="mailto:shivamemitra7@gmail.com" style="text-decoration: none; color: inherit;">
+    shivamemitra7@gmail.com
+  </a>
+</p>
+                <p>
+  <i class="fas fa-map-marker-alt"></i> 
+  <a href="https://www.google.com/maps/search/?q=Street+opposite+Police+Station,+Behind+Roadways+Bus+Stand,+Sardarshahar" 
+     target="_blank" 
+     style="text-decoration: none; color: inherit;">
+     Opposite Street Of Police Station, Behind Roadways Bus Stand, Sardarshahar
+  </a>
+</p>
             </div>
-            <div class="social-links">
-                <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
-                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-            </div>
+           
             <form>
                 <input type="text" placeholder="Your Name" required>
                 <input type="email" placeholder="Your Email" required>
@@ -286,8 +358,8 @@
 
     <footer>
         <div class="social-links">
-            <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook "></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
             <a href="#" aria-label="Google Maps"><i class="fas fa-map-marker-alt"></i></a>
         </div>
         &copy; <span id="year"></span> Shivam E-Mitra | All Rights Reserved
